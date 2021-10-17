@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" > </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" > </script>
+    <script src="https://cdn.rawgit.com/CryptoStore/crypto-js/3.1.2/build/rollups/aes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/asmCrypto/0.22.0/asmcrypto.js"></script>
+   
+
+   
+</head>
+<body>
+    <input type="file" id="file-input" />
+   
+  
+    <h3>Contenido del archivo:</h3>
+    <p id="contenido-archivo"></p>
+    <p id="contenido-archivos"></p>
+    
+
+    <script type="module">
+    
+  
+  function leerArchivo(e) {
+  var archivo = e.target.files[0];
+  if (!archivo) {
+    return;
+  }
+ 
+  const lector = new FileReader();
+  lector.onload = function(e) {
+    var password = "holaholaholahola";
+    const contenido = lector.result;
+    console.log(contenido +" contenido");
+    const cryptoInfo = CryptoJS.AES.encrypt(JSON.stringify(contenido), password).toString();
+    console.log({ cryptoInfo });
+    const info2 = CryptoJS.AES.decrypt(cryptoInfo, password).toString(CryptoJS.enc.Utf8);
+
+    console.log({ info2 });
+
+    const info3 = JSON.parse(info2);
+
+    console.log(info3);
+
+    mostrarContenido("Texto cifrado:"+info3.toString());
+    
+
+  };
+  lector.readAsText(archivo);
+  
+}
+
+function mostrarContenido(info3) {
+  var elemento = document.getElementById('contenido-archivo');
+  elemento.innerHTML = info3;
+ 
+}
+
+
+
+document.getElementById('file-input')
+  .addEventListener('change', leerArchivo, false);
+
+  </script>
+     
+  
+ 
+  
+</body>
+</html>

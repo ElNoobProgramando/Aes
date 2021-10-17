@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Cifrado AES Web</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+    Este es un ejemplo del cifrado AES
+    <br>
+  
+
+    <br>
+    <strong>  <label>
+        <form class="formulario" onsubmit="function validar()">
+        <div>
+            <label for="textNombre">Mensaje:</label>
+            <input type="text" id="textNombre"  minlength="32" maxlength="32" required/>
+            <label for="password">Password:</label>
+            <input type="text" id="password" minlength="32" maxlength="32" required>
+            <br/>
+        
+        
+        <br/>
+        <input type="submit" id="boton-txt" value="Descargar TXT"  onclick="return validar()"></div>
+        
+        
+    </div>
+        <br/>
+ 
+    </FORM>
+    <center><a href="descifrar192.html" style="text-decoration:none"><button class="btn btn--2" style="text-decoration: none; color: black;">Descifrar</button></a></center>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" > </script>
+    <script src="aes256.js" ></script>
+    
+</body>
+</html>

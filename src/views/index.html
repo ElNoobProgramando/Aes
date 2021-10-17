@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu AES</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="main">
+        <div>
+            <h2>Seleccion el tipo de cifrado que quieres usar</h2>
+            <form name="c" id="c">
+                <input type="radio" name="tipo" value="1">
+                <label for="128">AES de 128</label>
+                <br>
+                <input type="radio" name="tipo" value="2">
+                <label for="192">AES de 192</label>
+                <br>
+                <input type="radio" name="tipo" value="3">
+                <label for="256">AES de 256</label>
+                <br>
+                <br>
+                <input type="button" value="Aceptar" onclick="Aceptar()" class="aceptar">
+            </form>
+        </div>
+    </div>
+    <script src="js/AES.js"></script>
+</body>
+</html>
